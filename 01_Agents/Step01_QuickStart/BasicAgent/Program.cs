@@ -1,10 +1,13 @@
 ﻿using Azure.AI.OpenAI;
+using BasicAgent.Models;
 using BasicAgent.Plugins;
 using CommonShared;
+using Microsoft.Agents.AI;
 using Microsoft.Extensions.AI;
 using Microsoft.Extensions.Configuration;
 using OpenAI;
 using System.ClientModel;
+using System.Text.Json;
 
 // Load configuration
 var config = new ConfigurationBuilder()
@@ -103,6 +106,34 @@ var azureOpenAIProvider = config.GetSection("AzureOpenAI").Get<OpenAIProvider>()
 //}
 
 //Console.WriteLine(Environment.NewLine + $"Agent: {response}");
+#endregion
+
+#region 06-Structured Output
+var schema = AIJsonUtilities.CreateJsonSchema(typeof(PersonInfo));
+var chatOptions = new ChatOptions()
+{
+    ResponseFormat = ChatResponseFormat.ForJsonSchema(
+        schema: schema,
+        schemaName: "PersonInfo",
+        schemaDescription: "Information about a person including their name, age, and occupation")
+};
+var agent = new OpenAIClient(
+        new ApiKeyCredential(openAIProvider.ApiKey),
+        new OpenAIClientOptions { Endpoint = new Uri(openAIProvider.Endpoint) })
+    .GetChatClient(openAIProvider.ModelId)
+    .CreateAIAgent(new ChatClientAgentOptions()
+    {
+        Name = "HelpfulAssistant",
+        Instructions = "You are a helpful assistant.",
+        ChatOptions = chatOptions
+    });
+
+var response = await agent.RunAsync("Please provide information about John Smith, who is a 35-year-old software engineer.");
+var pesonInfo = response.Deserialize<PersonInfo>(JsonSerializerOptions.Web);
+Console.WriteLine("Assistant Output:");
+Console.WriteLine($"Name: {pesonInfo.Name}");
+Console.WriteLine($"Age: {pesonInfo.Age}");
+Console.WriteLine($"Occupation: {pesonInfo.Occupation}");
 #endregion
 
 Console.ReadKey();

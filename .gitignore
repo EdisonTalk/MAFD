@@ -110,3 +110,4 @@ UpgradeLog*.XML
 
 .vs/
 /01_Agents/Step01_QuickStart/BasicAgent/appsettings.Secrets.json
+/01_Agents/Step01_QuickStart/AdvancedAgent/appsettings.Secrets.json

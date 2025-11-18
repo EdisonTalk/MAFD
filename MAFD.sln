@@ -15,6 +15,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "00_Shared", "00_Shared", "{
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CommonShared", "00_Shared\CommonShared\CommonShared.csproj", "{253F4172-799A-4EC2-86E4-139D7DCB814E}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AdvancedAgent", "01_Agents\Step01_QuickStart\AdvancedAgent\AdvancedAgent.csproj", "{0401602B-3071-474B-9D69-AB7B47ACAF45}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -29,6 +31,10 @@ Global
 		{253F4172-799A-4EC2-86E4-139D7DCB814E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{253F4172-799A-4EC2-86E4-139D7DCB814E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{253F4172-799A-4EC2-86E4-139D7DCB814E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0401602B-3071-474B-9D69-AB7B47ACAF45}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0401602B-3071-474B-9D69-AB7B47ACAF45}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0401602B-3071-474B-9D69-AB7B47ACAF45}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0401602B-3071-474B-9D69-AB7B47ACAF45}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -36,6 +42,7 @@ Global
 	GlobalSection(NestedProjects) = preSolution
 		{DA76ABCD-A1D5-4272-A2FF-A9050518EC0F} = {02EA681E-C7D8-13C7-8484-4AC65E1B71E8}
 		{253F4172-799A-4EC2-86E4-139D7DCB814E} = {4D36698D-8AB2-4C31-8C0F-9E7C59819B5A}
+		{0401602B-3071-474B-9D69-AB7B47ACAF45} = {02EA681E-C7D8-13C7-8484-4AC65E1B71E8}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {F428A092-17AE-4354-8BE9-E367B67913F5}
