@@ -112,3 +112,6 @@ UpgradeLog*.XML
 /01_Agents/Step01_QuickStart/BasicAgent/appsettings.Secrets.json
 /01_Agents/Step01_QuickStart/AdvancedAgent/appsettings.Secrets.json
 /01_Agents/Step02_Persistence/PersistAgentThread/appsettings.Secrets.json
+/02_Workflows/Chapter01_HandOff/HandOffMode/appsettings.Secrets.json
+/02_Workflows/Chapter01_Orechestration/SequentialMode/appsettings.Secrets.json
+/02_Workflows/Chapter01_Orechestration/HandOffMode/appsettings.Secrets.json

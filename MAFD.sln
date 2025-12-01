@@ -17,6 +17,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AdvancedAgent", "01_Agents\
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PersistAgentThread", "01_Agents\Step02_Persistence\PersistAgentThread\PersistAgentThread.csproj", "{C8BCD3F5-CDC8-4AEC-8F9F-C8EE48601E6E}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HandOffMode", "02_Workflows\Chapter01_Orechestration\HandOffMode\HandOffMode.csproj", "{826F2A12-1AC9-80EC-8972-6C912D8D1E72}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SequentialMode", "02_Workflows\Chapter01_Orechestration\SequentialMode\SequentialMode.csproj", "{68D92830-A62C-0317-4258-637269528162}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -39,6 +43,14 @@ Global
 		{C8BCD3F5-CDC8-4AEC-8F9F-C8EE48601E6E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C8BCD3F5-CDC8-4AEC-8F9F-C8EE48601E6E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C8BCD3F5-CDC8-4AEC-8F9F-C8EE48601E6E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{826F2A12-1AC9-80EC-8972-6C912D8D1E72}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{826F2A12-1AC9-80EC-8972-6C912D8D1E72}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{826F2A12-1AC9-80EC-8972-6C912D8D1E72}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{826F2A12-1AC9-80EC-8972-6C912D8D1E72}.Release|Any CPU.Build.0 = Release|Any CPU
+		{68D92830-A62C-0317-4258-637269528162}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{68D92830-A62C-0317-4258-637269528162}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{68D92830-A62C-0317-4258-637269528162}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{68D92830-A62C-0317-4258-637269528162}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -48,6 +60,8 @@ Global
 		{253F4172-799A-4EC2-86E4-139D7DCB814E} = {4D36698D-8AB2-4C31-8C0F-9E7C59819B5A}
 		{0401602B-3071-474B-9D69-AB7B47ACAF45} = {02EA681E-C7D8-13C7-8484-4AC65E1B71E8}
 		{C8BCD3F5-CDC8-4AEC-8F9F-C8EE48601E6E} = {02EA681E-C7D8-13C7-8484-4AC65E1B71E8}
+		{826F2A12-1AC9-80EC-8972-6C912D8D1E72} = {8615A254-CFE7-4CA9-8567-13A76318B0F2}
+		{68D92830-A62C-0317-4258-637269528162} = {8615A254-CFE7-4CA9-8567-13A76318B0F2}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {F428A092-17AE-4354-8BE9-E367B67913F5}
