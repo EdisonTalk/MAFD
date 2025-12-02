@@ -21,6 +21,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HandOffMode", "02_Workflows
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SequentialMode", "02_Workflows\Chapter01_Orechestration\SequentialMode\SequentialMode.csproj", "{68D92830-A62C-0317-4258-637269528162}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CustomExecutor", "02_Workflows\Chapter01_Orechestration\CustomExecutor\CustomExecutor.csproj", "{A30646FE-3035-194B-2B1B-677C53B0CD86}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -51,6 +53,10 @@ Global
 		{68D92830-A62C-0317-4258-637269528162}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{68D92830-A62C-0317-4258-637269528162}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{68D92830-A62C-0317-4258-637269528162}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A30646FE-3035-194B-2B1B-677C53B0CD86}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A30646FE-3035-194B-2B1B-677C53B0CD86}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A30646FE-3035-194B-2B1B-677C53B0CD86}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A30646FE-3035-194B-2B1B-677C53B0CD86}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -62,6 +68,7 @@ Global
 		{C8BCD3F5-CDC8-4AEC-8F9F-C8EE48601E6E} = {02EA681E-C7D8-13C7-8484-4AC65E1B71E8}
 		{826F2A12-1AC9-80EC-8972-6C912D8D1E72} = {8615A254-CFE7-4CA9-8567-13A76318B0F2}
 		{68D92830-A62C-0317-4258-637269528162} = {8615A254-CFE7-4CA9-8567-13A76318B0F2}
+		{A30646FE-3035-194B-2B1B-677C53B0CD86} = {8615A254-CFE7-4CA9-8567-13A76318B0F2}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {F428A092-17AE-4354-8BE9-E367B67913F5}

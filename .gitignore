@@ -115,3 +115,4 @@ UpgradeLog*.XML
 /02_Workflows/Chapter01_HandOff/HandOffMode/appsettings.Secrets.json
 /02_Workflows/Chapter01_Orechestration/SequentialMode/appsettings.Secrets.json
 /02_Workflows/Chapter01_Orechestration/HandOffMode/appsettings.Secrets.json
+/02_Workflows/Chapter01_Orechestration/CustomExecutor/appsettings.Secrets.json
