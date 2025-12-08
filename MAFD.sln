@@ -17,11 +17,13 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AdvancedAgent", "01_Agents\
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PersistAgentThread", "01_Agents\Step02_Persistence\PersistAgentThread\PersistAgentThread.csproj", "{C8BCD3F5-CDC8-4AEC-8F9F-C8EE48601E6E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HandOffMode", "02_Workflows\Chapter01_Orechestration\HandOffMode\HandOffMode.csproj", "{826F2A12-1AC9-80EC-8972-6C912D8D1E72}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HandOffMode", "02_Workflows\Chapter01_Orchestration\HandOffMode\HandOffMode.csproj", "{826F2A12-1AC9-80EC-8972-6C912D8D1E72}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SequentialMode", "02_Workflows\Chapter01_Orechestration\SequentialMode\SequentialMode.csproj", "{68D92830-A62C-0317-4258-637269528162}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SequentialMode", "02_Workflows\Chapter01_Orchestration\SequentialMode\SequentialMode.csproj", "{68D92830-A62C-0317-4258-637269528162}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CustomExecutor", "02_Workflows\Chapter01_Orechestration\CustomExecutor\CustomExecutor.csproj", "{A30646FE-3035-194B-2B1B-677C53B0CD86}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CustomExecutor", "02_Workflows\Chapter01_Orchestration\CustomExecutor\CustomExecutor.csproj", "{A30646FE-3035-194B-2B1B-677C53B0CD86}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MixedOrchestration", "02_Workflows\Chapter01_Orchestration\MixedOrchestration\MixedOrchestration.csproj", "{EFA2A004-19F6-1CDB-321A-7EC7E16E51ED}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -57,6 +59,10 @@ Global
 		{A30646FE-3035-194B-2B1B-677C53B0CD86}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A30646FE-3035-194B-2B1B-677C53B0CD86}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A30646FE-3035-194B-2B1B-677C53B0CD86}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EFA2A004-19F6-1CDB-321A-7EC7E16E51ED}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EFA2A004-19F6-1CDB-321A-7EC7E16E51ED}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EFA2A004-19F6-1CDB-321A-7EC7E16E51ED}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EFA2A004-19F6-1CDB-321A-7EC7E16E51ED}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -69,6 +75,7 @@ Global
 		{826F2A12-1AC9-80EC-8972-6C912D8D1E72} = {8615A254-CFE7-4CA9-8567-13A76318B0F2}
 		{68D92830-A62C-0317-4258-637269528162} = {8615A254-CFE7-4CA9-8567-13A76318B0F2}
 		{A30646FE-3035-194B-2B1B-677C53B0CD86} = {8615A254-CFE7-4CA9-8567-13A76318B0F2}
+		{EFA2A004-19F6-1CDB-321A-7EC7E16E51ED} = {8615A254-CFE7-4CA9-8567-13A76318B0F2}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {F428A092-17AE-4354-8BE9-E367B67913F5}
