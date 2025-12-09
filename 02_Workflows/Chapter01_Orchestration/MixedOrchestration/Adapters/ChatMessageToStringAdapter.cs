@@ -18,7 +18,7 @@ public sealed class ChatMessageToStringAdapter(string id) : Executor<ChatMessage
         Console.ResetColor();
 
         string result = message.Text ?? "";
-        Console.WriteLine($"  ✅ 提取文本内容: \"{result}\"\n");
+        Console.WriteLine($"  ✅ 提取文本内容: \"{result}\"");
 
         return ValueTask.FromResult(result);
     }

@@ -7,7 +7,7 @@ namespace MixedOrchestration.Adapters;
 /// Adapter 1: String → ChatMessage + TurnToken
 /// 用途：将普通 Executor 的 string 输出转换为 Agent 可接收的格式
 /// </summary>
-public sealed class StringToChatMessageAdapter(string id) : Executor<string>(id)
+public sealed class StringToChatMessageAdapter(string? id = null) : Executor<string>(id ?? "StringToChatMessage")
 {
     public override async ValueTask HandleAsync(string message, IWorkflowContext context, CancellationToken cancellationToken = default)
     {

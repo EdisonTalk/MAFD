@@ -14,7 +14,7 @@ public sealed class TextInverterExecutor(string id) : Executor<string, string>(i
         Console.ForegroundColor = ConsoleColor.Yellow;
         Console.WriteLine($"[{Id}] 🔄 文本倒序处理");
         Console.WriteLine($"  原文: {message}");
-        Console.WriteLine($"  结果: {inverted}\n");
+        Console.WriteLine($"  结果: {inverted}");
         Console.ResetColor();
 
         return ValueTask.FromResult(inverted);

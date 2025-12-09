@@ -28,6 +28,6 @@ public sealed class ChatMessageSyncAdapter(string id) : Executor<ChatMessage>(id
 
         // 发送 TurnToken 触发下一个 Agent
         await context.SendMessageAsync(new TurnToken(emitEvents: true), cancellationToken: cancellationToken);
-        Console.WriteLine($"  ✅ 已发送 TurnToken（下一个 Agent 将被触发）\n");
+        Console.WriteLine($"  ✅ 已发送 TurnToken（下一个 Agent 将被触发）");
     }
 }
