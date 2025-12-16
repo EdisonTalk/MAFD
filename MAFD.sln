@@ -25,6 +25,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CustomExecutor", "02_Workfl
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MixedOrchestration", "02_Workflows\Chapter01_Orchestration\MixedOrchestration\MixedOrchestration.csproj", "{EFA2A004-19F6-1CDB-321A-7EC7E16E51ED}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SharedState", "02_Workflows\Chapter02_Context\SharedState\SharedState.csproj", "{4108ECDD-2D5F-4E87-8221-31C2197A1C1E}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -63,6 +65,10 @@ Global
 		{EFA2A004-19F6-1CDB-321A-7EC7E16E51ED}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{EFA2A004-19F6-1CDB-321A-7EC7E16E51ED}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{EFA2A004-19F6-1CDB-321A-7EC7E16E51ED}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4108ECDD-2D5F-4E87-8221-31C2197A1C1E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4108ECDD-2D5F-4E87-8221-31C2197A1C1E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4108ECDD-2D5F-4E87-8221-31C2197A1C1E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4108ECDD-2D5F-4E87-8221-31C2197A1C1E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -76,6 +82,7 @@ Global
 		{68D92830-A62C-0317-4258-637269528162} = {8615A254-CFE7-4CA9-8567-13A76318B0F2}
 		{A30646FE-3035-194B-2B1B-677C53B0CD86} = {8615A254-CFE7-4CA9-8567-13A76318B0F2}
 		{EFA2A004-19F6-1CDB-321A-7EC7E16E51ED} = {8615A254-CFE7-4CA9-8567-13A76318B0F2}
+		{4108ECDD-2D5F-4E87-8221-31C2197A1C1E} = {8615A254-CFE7-4CA9-8567-13A76318B0F2}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {F428A092-17AE-4354-8BE9-E367B67913F5}
