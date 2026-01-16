@@ -54,9 +54,9 @@ foreach (var ticket in ticketRequests)
     var adaptiveQC = new AdaptiveQualityCheckExecutor(QualityCheckConstants.PolitenessThreshold, QualityCheckConstants.AccuracyThreshold, chatClient);
     var intelligentImprove = new IntelligentImproveExecutor(ticket, chatClient);
     var workflow = new WorkflowBuilder(adaptiveDraft)
-        .AddEdge(adaptiveDraft, adaptiveQC)
-        .AddEdge(adaptiveQC, intelligentImprove)
-        .AddEdge(intelligentImprove, adaptiveDraft)
+        .AddEdge(adaptiveDraft, adaptiveQC)      // 生成 → 质检
+        .AddEdge(adaptiveQC, intelligentImprove) // 质检不通过 → 改进
+        .AddEdge(intelligentImprove, adaptiveQC) // 改进 → 直接送回质检（不再重新生成）
         .WithOutputFrom(adaptiveQC)
         .Build();
 
@@ -70,12 +70,12 @@ foreach (var workflow in workflows)
 {
     await using (var run = await InProcessExecution.StreamAsync(workflow, QualityCheckSignal.Init))
     {
-        var scoreTimeline = new List<object>();
+        var adaptiveTimeline = new List<object>();
 
         await foreach (var evt in run.WatchStreamAsync())
         {
             // 强制中断（最多5次尝试）
-            if (scoreTimeline.Count == maxAttempts)
+            if (adaptiveTimeline.Count == maxAttempts)
             {
                 Console.WriteLine($"⛔ 强制中断工作流执行（已完成{maxAttempts}次评估）");
                 break;
@@ -98,7 +98,7 @@ foreach (var workflow in workflows)
                 // adaptive
                 case AdaptiveQualityScoreEvent scoreEvent:
                     dynamic payload = scoreEvent.Data!;
-                    scoreTimeline.Add(new QualityScoreTimelineItem(
+                    adaptiveTimeline.Add(new QualityScoreTimelineItem(
                         Attempt: (int)payload.Attempt,
                         PolitenessScore: (int)payload.PolitenessScore,
                         AccuracyScore: (int)payload.AccuracyScore,

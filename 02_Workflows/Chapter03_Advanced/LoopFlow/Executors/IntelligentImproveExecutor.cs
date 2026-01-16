@@ -57,7 +57,8 @@ internal sealed class IntelligentImproveExecutor : Executor<QualityReport>
         Console.WriteLine($"🔧 第 {attempt} 次智能改进完成");
         Console.WriteLine($"📝 改进后内容：{improvedContent}");
 
-        // 触发下一次生成（使用改进后的内容作为上下文）
-        await context.SendMessageAsync(QualityCheckSignal.Revise, targetId: "AdaptiveReplyDraft", cancellationToken);
+        // ⭐ 关键修复：将改进后的内容直接发送给质检节点，而不是重新生成
+        var improvedDraft = new ReplyDraft(_ticket.Id, improvedContent, attempt);
+        await context.SendMessageAsync(improvedDraft, targetId: "AdaptiveQualityCheck", cancellationToken);
     }
 }

@@ -82,5 +82,7 @@ internal sealed class AdaptiveQualityCheckExecutor : Executor<ReplyDraft>
             // 发送质检报告到改进环节
             await context.SendMessageAsync(report, targetId: "IntelligentImprove", cancellationToken);
         }
+
+        Console.WriteLine($"🔍 第 {attempt} 次质检结束");
     }
 }
