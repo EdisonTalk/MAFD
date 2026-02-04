@@ -73,14 +73,25 @@ public class HotelAgent
 
         return Task.FromResult(new AgentCard()
         {
-            Name = "hotel-recommendation",
-            Description = "根据目的地和预算推荐合适的酒店，包括豪华型、舒适型、经济型",
+            Name = "hotel-a2a-agent",
+            Description = "hotel information agent",
             Url = agentUrl,
             Version = "1.0.0",
             DefaultInputModes = ["text"],
             DefaultOutputModes = ["text"],
             Capabilities = capabilities,
-            Skills = [],
+            Skills = [
+                new AgentSkill
+                {
+                    Id = "hotel-recommendation",
+                    Name = "酒店推荐",
+                    Description = "根据目的地和预算推荐合适的酒店，包括豪华型、舒适型、经济型",
+                    Tags = ["hotel", "accommodation", "booking", "travel"],
+                    Examples = ["推荐上海的酒店", "上海外滩附近有什么好酒店", "预算500以内的北京酒店"],
+                    InputModes = ["text"],
+                    OutputModes = ["text"]
+                }
+                ],
         });
     }
 }

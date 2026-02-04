@@ -5,7 +5,7 @@ using Microsoft.Extensions.AI;
 using Microsoft.Extensions.Configuration;
 using OpenAI;
 using System.ClientModel;
-using TravelPlannerClient.Tools;
+using TravelPlannerClient.Utils;
 
 // Load Configuration
 var config = new ConfigurationBuilder()
@@ -39,7 +39,7 @@ foreach (var endpoint in agentEndpoints)
     var card = await resolver.GetAgentCardAsync();
     var agent = card.AsAIAgent(); // Convert A2A Agent to AIAgent instance
 
-    functionTools.AddRange(AgentFunctionTools.CreateFunctionTools(agent, card));
+    functionTools.AddRange(AgentFunctionHelper.CreateFunctionTools(agent, card));
 }
 
 // Step4. Create main AI Agent with Tools
@@ -47,7 +47,7 @@ var mainAgent = new ChatClientAgent(
     chatClient: chatClient,
     instructions: """
     你是一个智能旅行规划助手。你可以利用可用的工具来帮助用户完成任务。
-    当用户询问时，请使用合适的工具获取信息，然后给出建议。
+    当用户询问时，请使用合适的工具获取信息，然后回复用户。
     """,
     tools: [.. functionTools]
    );
@@ -56,8 +56,8 @@ var mainAgent = new ChatClientAgent(
 var userRequests = new[]
 {
     "查询一下上海的天气情况",
-    "推荐上海的酒店",
-    "帮我规划从成都到上海的旅行路线",
+    "推荐一下上海的酒店",
+    "帮我规划一下今日上海的一日游景点，并告诉我该如何穿衣服",
 };
 
 foreach (var userRequest in userRequests)
@@ -69,7 +69,6 @@ foreach (var userRequest in userRequests)
     // 执行 Agent
     Console.WriteLine("⏱️ 主 Agent 处理中...");
     var response = await mainAgent.RunAsync(userRequest);
-
     Console.WriteLine($"💬 回答:\n{response.Text}");
     Console.WriteLine();
 }

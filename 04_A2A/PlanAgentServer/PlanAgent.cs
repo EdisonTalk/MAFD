@@ -70,14 +70,25 @@ public class PlanAgent
 
         return Task.FromResult(new AgentCard()
         {
-            Name = "plan-recommendation",
-            Description = "推荐目的地的热门景点和游玩路线，包括历史文化、现代都市、文艺休闲等类型",
+            Name = "plan agent",
+            Description = "travel plan & attraction agent",
             Url = agentUrl,
             Version = "1.0.0",
             DefaultInputModes = ["text"],
             DefaultOutputModes = ["text"],
             Capabilities = capabilities,
-            Skills = [],
+            Skills = [
+                new AgentSkill
+                {
+                    Id = "attraction-recommendation",
+                    Name = "景点推荐",
+                    Description = "推荐目的地的热门景点和游玩路线，包括历史文化、现代都市、文艺休闲等类型",
+                    Tags = ["attraction", "sightseeing", "tourism", "travel"],
+                    Examples = ["上海有什么好玩的", "北京必去的景点", "杭州西湖怎么玩"],
+                    InputModes = ["text"],
+                    OutputModes = ["text"]
+                }
+                ],
         });
     }
 }

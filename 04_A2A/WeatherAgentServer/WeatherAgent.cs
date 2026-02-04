@@ -65,14 +65,25 @@ public class WeatherAgent
 
         return Task.FromResult(new AgentCard()
         {
-            Name = "weather-query",
-            Description = "查询指定城市的天气预报，包括温度、降水概率、穿衣建议等",
+            Name = "weather agent",
+            Description = "weather information agent",
             Url = agentUrl,
             Version = "1.0.0",
             DefaultInputModes = ["text"],
             DefaultOutputModes = ["text"],
             Capabilities = capabilities,
-            Skills = [],
+            Skills = [
+                new AgentSkill
+                {
+                    Id = "weather-query",
+                    Name = "天气查询",
+                    Description = "查询指定城市的天气预报，包括温度、降水概率、穿衣建议等",
+                    Tags = ["weather", "forecast", "climate"],
+                    Examples = ["上海明天天气怎么样", "成都这周的天气预报", "杭州下雨吗"],
+                    InputModes = ["text"],
+                    OutputModes = ["text"]
+                }
+                ],
         });
     }
 }

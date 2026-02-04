@@ -3,9 +3,9 @@ using Microsoft.Agents.AI;
 using Microsoft.Extensions.AI;
 using System.Text.RegularExpressions;
 
-namespace TravelPlannerClient.Tools;
+namespace TravelPlannerClient.Utils;
 
-public class AgentFunctionTools
+public class AgentFunctionHelper
 {
     public static IEnumerable<AIFunction> CreateFunctionTools(AIAgent a2aAgent, AgentCard agentCard)
     {
