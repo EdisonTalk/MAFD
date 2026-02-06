@@ -110,3 +110,4 @@ UpgradeLog*.XML
 
 .vs/
 *.Secrets.json
+/05_DevUI/DevUISample/appsettings.Secrets.json
