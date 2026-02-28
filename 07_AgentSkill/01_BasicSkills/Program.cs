@@ -17,6 +17,8 @@ var chatClient = new OpenAIClient(
         new ApiKeyCredential(openAIProvider.ApiKey),
         new OpenAIClientOptions { Endpoint = new Uri(openAIProvider.Endpoint) })
     .GetChatClient(openAIProvider.ModelId);
+Console.InputEncoding = System.Text.Encoding.UTF8;
+Console.OutputEncoding = System.Text.Encoding.UTF8;
 
 // ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 // Step1 创建 SkillsProvider — 从文件系统发现和加载 Skills
