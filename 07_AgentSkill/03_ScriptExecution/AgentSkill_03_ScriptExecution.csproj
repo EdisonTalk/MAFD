@@ -12,19 +12,23 @@
   </PropertyGroup>
   
   <ItemGroup>
-    <None Remove="skills\password-generator\references\PASSWORD_GUIDELINES.md" />
-    <None Remove="skills\password-generator\scripts\generate.py" />
-    <None Remove="skills\password-generator\SKILL.md" />
+    <None Remove="skills\system-ops\SKILL.md" />
   </ItemGroup>
 
   <ItemGroup>
-    <Content Include="skills\password-generator\references\PASSWORD_GUIDELINES.md">
+    <Content Include="skills\system-ops\references\troubleshooting-guide.md">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="skills\password-generator\scripts\generate.py">
+    <Content Include="skills\system-ops\scripts\check-top-processes.ps1">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="skills\password-generator\SKILL.md">
+    <Content Include="skills\system-ops\scripts\check-disk-usage.ps1">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="skills\system-ops\scripts\check-system-info.ps1">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="skills\system-ops\SKILL.md">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
   </ItemGroup>
