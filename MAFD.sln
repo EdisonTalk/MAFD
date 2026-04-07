@@ -99,6 +99,10 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "05_CodeDefinedSkills", "05_
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AgentSkill_05_CodeDefinedSkills", "07_AgentSkill\05_CodeDefinedSkills\AgentSkill_05_CodeDefinedSkills.csproj", "{149411D6-FD31-F261-9EBD-1C2A877F4B23}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "08_DeclarativeAgent", "08_DeclarativeAgent", "{80057E4A-D02B-4EB5-9952-70C2BE673173}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Declarative_01", "08_DeclarativeAgent\01_HelloDeclarative\Declarative_01.csproj", "{7ED5387A-7A78-56D5-231A-8828F59EF72B}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -225,6 +229,10 @@ Global
 		{149411D6-FD31-F261-9EBD-1C2A877F4B23}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{149411D6-FD31-F261-9EBD-1C2A877F4B23}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{149411D6-FD31-F261-9EBD-1C2A877F4B23}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7ED5387A-7A78-56D5-231A-8828F59EF72B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7ED5387A-7A78-56D5-231A-8828F59EF72B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7ED5387A-7A78-56D5-231A-8828F59EF72B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7ED5387A-7A78-56D5-231A-8828F59EF72B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -270,6 +278,7 @@ Global
 		{B450A398-EE7D-94FD-27EF-31AEF4B49B97} = {F0211ABB-1200-470A-8C85-1133A0A71954}
 		{C70618A5-23C2-4000-AAF6-A646D8CD3E5D} = {CC8DECED-7C45-4E1E-AA1E-3877E1C2C347}
 		{149411D6-FD31-F261-9EBD-1C2A877F4B23} = {C70618A5-23C2-4000-AAF6-A646D8CD3E5D}
+		{7ED5387A-7A78-56D5-231A-8828F59EF72B} = {80057E4A-D02B-4EB5-9952-70C2BE673173}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {F428A092-17AE-4354-8BE9-E367B67913F5}
