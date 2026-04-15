@@ -36,14 +36,18 @@ Console.WriteLine();
 // ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 AIAgent agent = chatClient.AsAIAgent(new ChatClientAgentOptions
 {
-    Name = "UnitConverterAgent",
+    Name = "ShippingOpsAgent",
     ChatOptions = new()
     {
-        Instructions = "你是一个专业的AI助手，负责帮助用户实现单位的转换。",
+        Instructions = "你是一个专业的跨境物流运营助手，负责帮助用户处理相关事务，请使用用户提问的语言进行回复。",
     },
-    // 🔑 知识层：通过 AIContextProviders 注入 Skills
     AIContextProviders = [skillsProvider],
 });
+// 💡 使用 Agent Builder 注册函数调用中间件
+agent = agent
+    .AsBuilder()
+    .Use(ToolExecutionLoggingMiddleware.ExecuteAsync) // 使用工具执行日志中间件，记录工具调用的日志
+    .Build();
 Console.WriteLine("✅ Agent 创建成功");
 Console.WriteLine();
 
@@ -54,21 +58,12 @@ var session = await agent.CreateSessionAsync();
 Console.WriteLine("━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━");
 Console.WriteLine($"开始测试：基于 File-Based Skills");
 // 中文问题：英里 -> 公里
-var question1 = "马拉松比赛的距离26.2 英里是多少公里？";
+var question1 = "客户提供包裹尺寸 50x40x30 cm，实际重量 8kg，单价 12 元/kg。请按业务规则给出计费重量与预估报价。";
 Console.WriteLine($"👤 用户: {question1}");
 Console.WriteLine();
 var response1 = await agent.RunAsync(question1, session);
 Console.WriteLine("━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━");
 Console.WriteLine($"🤖 Agent: {response1.Text}");
-Console.WriteLine("━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━");
-Console.WriteLine();
-// 英文问题：磅 -> 千克
-var question2 = "How many pounds is 75 kilograms?";
-Console.WriteLine($"👤 用户: {question2}");
-Console.WriteLine();
-var response2 = await agent.RunAsync(question2, session);
-Console.WriteLine("━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━");
-Console.WriteLine($"🤖 Agent: {response2.Text}");
 Console.WriteLine("━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━");
 Console.WriteLine();
 
