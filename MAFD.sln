@@ -107,6 +107,10 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "06_ClassBasedSkills", "06_C
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AgentSkill_06_StrongTypeSkills", "07_AgentSkill\06_StrongTypeSkills\AgentSkill_06_StrongTypeSkills.csproj", "{0802AD20-DE06-B818-D0A9-F121405F5934}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "07_BuilderPattern", "07_BuilderPattern", "{AAB9823E-5979-45B3-A014-60EA6405728B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AgentSkill_07_BuilderPattern", "07_AgentSkill\07_BuilderPattern\AgentSkill_07_BuilderPattern.csproj", "{474A6AC3-5CC1-A8D7-1D63-EDA304653463}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -241,6 +245,10 @@ Global
 		{0802AD20-DE06-B818-D0A9-F121405F5934}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0802AD20-DE06-B818-D0A9-F121405F5934}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0802AD20-DE06-B818-D0A9-F121405F5934}.Release|Any CPU.Build.0 = Release|Any CPU
+		{474A6AC3-5CC1-A8D7-1D63-EDA304653463}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{474A6AC3-5CC1-A8D7-1D63-EDA304653463}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{474A6AC3-5CC1-A8D7-1D63-EDA304653463}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{474A6AC3-5CC1-A8D7-1D63-EDA304653463}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -289,6 +297,8 @@ Global
 		{EF738385-C401-4C86-AF56-265D46D73A66} = {E361FCDA-639C-417B-A4CD-838DD7CE806C}
 		{5B352E21-79EC-4AF9-B59A-284F2873C6BE} = {CC8DECED-7C45-4E1E-AA1E-3877E1C2C347}
 		{0802AD20-DE06-B818-D0A9-F121405F5934} = {5B352E21-79EC-4AF9-B59A-284F2873C6BE}
+		{AAB9823E-5979-45B3-A014-60EA6405728B} = {CC8DECED-7C45-4E1E-AA1E-3877E1C2C347}
+		{474A6AC3-5CC1-A8D7-1D63-EDA304653463} = {AAB9823E-5979-45B3-A014-60EA6405728B}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {F428A092-17AE-4354-8BE9-E367B67913F5}
