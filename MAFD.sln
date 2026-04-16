@@ -103,7 +103,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AgentSkill_04_ScriptExecuti
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AgentSkill_03_ScriptExecutionV1", "07_AgentSkill\03_ScriptExecution_NonOffical\AgentSkill_03_ScriptExecutionV1.csproj", "{EF738385-C401-4C86-AF56-265D46D73A66}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "06_StrongTypeSkills", "06_StrongTypeSkills", "{5B352E21-79EC-4AF9-B59A-284F2873C6BE}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "06_ClassBasedSkills", "06_ClassBasedSkills", "{5B352E21-79EC-4AF9-B59A-284F2873C6BE}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AgentSkill_06_StrongTypeSkills", "07_AgentSkill\06_StrongTypeSkills\AgentSkill_06_StrongTypeSkills.csproj", "{0802AD20-DE06-B818-D0A9-F121405F5934}"
 EndProject

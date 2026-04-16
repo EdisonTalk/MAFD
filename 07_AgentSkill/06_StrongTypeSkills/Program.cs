@@ -1,4 +1,5 @@
 ﻿using AgentSkillDemo.Infrastructure;
+using AgentSkillDemo.Middlewares;
 using AgentSkillDemo.Skills;
 using Microsoft.Agents.AI;
 using Microsoft.Extensions.AI;
@@ -35,6 +36,11 @@ AIAgent agent = chatClient.AsAIAgent(new ChatClientAgentOptions
     },
     AIContextProviders = [skillsProvider],
 });
+// 💡 使用 Agent Builder 注册函数调用中间件
+agent = agent
+    .AsBuilder()
+    .Use(ToolExecutionLoggingMiddleware.ExecuteAsync) // 使用工具执行日志中间件，记录工具调用的日志
+    .Build();
 Console.WriteLine("✅ 基于强类型Skills 的 AI Agent 创建成功");
 Console.WriteLine();
 

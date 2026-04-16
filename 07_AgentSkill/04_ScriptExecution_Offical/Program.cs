@@ -1,4 +1,5 @@
 ﻿using AgentSkillDemo.Infrastructure;
+using AgentSkillDemo.Middlewares;
 using Microsoft.Agents.AI;
 using Microsoft.Extensions.AI;
 using Microsoft.Extensions.Configuration;
