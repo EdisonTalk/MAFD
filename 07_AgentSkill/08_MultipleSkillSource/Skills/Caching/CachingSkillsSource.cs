@@ -24,7 +24,7 @@ public sealed class CachingSkillsSource : AgentSkillsSource
     {
         if (_cache != null && DateTime.UtcNow < _cacheExpiresAt)
         {
-            Console.WriteLine($"  ⚡ [CachingSource] 命中缓存（过期时间: {_cacheExpiresAt:HH:mm:ss}）");
+            Console.WriteLine($"⚡ [CachingSource] 命中缓存（过期时间: {_cacheExpiresAt.ToLocalTime():HH:mm:ss}）");
             return _cache;
         }
 
@@ -35,10 +35,10 @@ public sealed class CachingSkillsSource : AgentSkillsSource
             if (_cache != null && DateTime.UtcNow < _cacheExpiresAt)
                 return _cache;
 
-            Console.WriteLine("  🔄 [CachingSource] 缓存未命中，从内层 Source 刷新...");
+            Console.WriteLine("🔄 [CachingSource] 缓存未命中，从内层 Source 刷新...");
             _cache = await _innerSource.GetSkillsAsync(cancellationToken);
             _cacheExpiresAt = DateTime.UtcNow.Add(_ttl);
-            Console.WriteLine($"  ✅ [CachingSource] 缓存已更新，{_cache.Count} 个技能，有效至 {_cacheExpiresAt:HH:mm:ss}");
+            Console.WriteLine($"✅ [CachingSource] 缓存已更新，{_cache.Count} 个技能，有效至 {_cacheExpiresAt.ToLocalTime():HH:mm:ss}");
             return _cache;
         }
         finally

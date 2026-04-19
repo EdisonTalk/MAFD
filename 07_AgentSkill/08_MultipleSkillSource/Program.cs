@@ -3,6 +3,7 @@ using AgentSkillDemo.Infrastructure;
 using AgentSkillDemo.Models;
 using AgentSkillDemo.Skills.Caching;
 using AgentSkillDemo.Skills.Global;
+using AgentSkillDemo.Skills.Local;
 using Microsoft.Agents.AI;
 using Microsoft.Extensions.AI;
 using Microsoft.Extensions.Configuration;
@@ -29,22 +30,10 @@ Console.OutputEncoding = System.Text.Encoding.UTF8;
 // ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 // Step2 加载Skills — Global远程Skill + Local本地Skill
 // ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-// ── Source 1：模拟全局技能库（Remote API，通用政策）──
+// ── Source 1：本地定制技能（覆盖全局版，注册顺序靠前 → 优先）──
+var localCustomSkills = await SimulatedLocalApiSkillsFactory.GetSkillsAsync();
+// ── Source 2：模拟全局技能库（Remote API，通用政策）──
 var globalSource = new SimulatedRemoteApiSkillsSource("https://global-skills.contoso.com/api");
-// ── Source 2：本地定制技能（覆盖全局版，注册顺序靠前 → 优先）──
-var localCustomSkills = new[]
-{
-    // 覆盖全局 expense-report，使用 Contoso 定制规则
-    new AgentInlineSkill("expense-report", "（Contoso定制v2）企业费用报销政策",
-        """
-        # Contoso 定制报销规则（2025版）
-        - 差旅费上限提升至 8000 元/次
-        - 新增"远程协作设备补贴"类目，≤3000元免审批
-        - 年末报销截止日期：12月25日
-        """),
-    // 新增：Contoso 特有的技能
-    new AgentInlineSkill("contoso-benefits", "Contoso 员工福利计划详情", "福利：弹性办公、年度体检、学习补贴..."),
-};
 // ── Source 3：带缓存的远程 Source（生产环境推荐）──
 var cachedGlobalSource = new CachingSkillsSource(globalSource, TimeSpan.FromMinutes(60));
 
@@ -53,7 +42,7 @@ var cachedGlobalSource = new CachingSkillsSource(globalSource, TimeSpan.FromMinu
 // ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 AgentSkillsProvider BuildProviderForRole(EmployeeRole role)
 {
-    Console.WriteLine($"\n  🔨 构建 {role} 角色的 Provider...");
+    Console.WriteLine($"\n🔨 开始构建 {role} 角色的 Provider...");
     return new AgentSkillsProviderBuilder()
         // 本地定制优先（先注册 → first-wins）
         .UseSkills(localCustomSkills)
@@ -87,9 +76,11 @@ foreach (var role in Enum.GetValues<EmployeeRole>())
     var provider = BuildProviderForRole(role);
     var srcField = typeof(AgentSkillsProvider).GetField("_source", BindingFlags.Instance | BindingFlags.NonPublic);
     var src = (AgentSkillsSource?)srcField?.GetValue(provider);
-    var skills = src is null ? new List<AgentSkill>() : (await src.GetSkillsAsync()).ToList();
+    var skills = src is null ? 
+        new List<AgentSkill>() : (await src.GetSkillsAsync()).ToList();
 
-    Console.WriteLine($"\n👤 [{role}] 可见技能（{skills.Count} 个）：");
+    Console.WriteLine("\n━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━");
+    Console.WriteLine($"👤 [{role}] 可见技能（{skills.Count} 个）：");
     foreach (var s in skills)
     {
         string origin = s.Frontmatter.Description.StartsWith("（Contoso") ? "（本地定制）" :

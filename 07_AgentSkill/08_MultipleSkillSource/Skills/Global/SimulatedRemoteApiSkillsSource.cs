@@ -18,8 +18,10 @@ public sealed class SimulatedRemoteApiSkillsSource : AgentSkillsSource
 
     public override async Task<IList<AgentSkill>> GetSkillsAsync(CancellationToken cancellationToken = default)
     {
-        Console.WriteLine($"  📡 [RemoteApiSource] 从 {_apiEndpoint} 拉取技能列表...");
-        var entries = GetMockGlobalSkillsApi();
+        Console.WriteLine($"📡 [RemoteApiSource] 从 {_apiEndpoint} 拉取技能列表...");
+
+        await Task.Delay(500, cancellationToken); // 模拟网络延迟
+        var entries = GetMockGlobalSkills();
 
         var skills = new List<AgentSkill>();
         foreach (var entry in entries)
@@ -28,18 +30,19 @@ public sealed class SimulatedRemoteApiSkillsSource : AgentSkillsSource
             {
                 var skill = new AgentInlineSkill(entry.Name, entry.Description, entry.Instructions);
                 skills.Add(skill);
-                Console.WriteLine($"  ✅ 加载: {entry.Name}（tags: {string.Join(", ", entry.Tags ?? [])}）");
             }
             catch (ArgumentException ex)
             {
-                Console.WriteLine($"  ⚠️ 跳过非法技能 '{entry.Name}': {ex.Message[..Math.Min(60, ex.Message.Length)]}");
+                Console.WriteLine($"⚠️ [RemoteApiSource] 跳过非法技能 '{entry.Name}': {ex.Message[..Math.Min(60, ex.Message.Length)]}");
             }
         }
+
+        Console.WriteLine($"✅ [RemoteApiSource] 已成功加载 {skills.Count} 个远程技能");
 
         return skills;
     }
 
-    private static IList<SkillApiEntry> GetMockGlobalSkillsApi()
+    private static IList<SkillApiEntry> GetMockGlobalSkills()
     {
         return new List<SkillApiEntry>
         {

@@ -28,8 +28,4 @@
     </None>
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="Skills\Local\" />
-  </ItemGroup>
-
 </Project>
